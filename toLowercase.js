@@ -18,11 +18,11 @@ window.JFWidgetLowercaseSetup ||
             function o(e, t, i) {
                 i
                     ? $(e).observe(t, function () {
-                          setTimeout(s, 1e3);
-                      })
+                        setTimeout(s, 1e3);
+                    })
                     : setTimeout(function () {
-                          $(e).observe(t, s);
-                      }, 50);
+                        $(e).observe(t, s);
+                    }, 50);
             }
             function s() {
                 var e = document.getElementById("input_" + r(d())) || $(d()),
@@ -38,75 +38,75 @@ window.JFWidgetLowercaseSetup ||
                     i = $(d());
                 i
                     ? ((t = new Element("input", { type: "text", id: a, name: n.qname, readonly: "readonly", className: "form-textbox to-lowercase" }).setStyle({ "box-sizing": "border-box" })),
-                      $(a + "_container").insert(t),
-                      (t = $$(".lowercase#" + a).first()),
-                      (e = t.parentNode.parentNode.style.width),
-                      t.setStyle({ width: e }),
-                      t.up('div[id*="cid"]').setStyle({ display: "inline-block" }),
-                      (function (e) {
-                          var t = r(e.id),
-                              e = JotForm.getInputType(t),
-                              i = $("id_" + t);
-                          switch (e) {
-                              case "radio":
-                              case "checkbox":
-                              case "signature":
-                                  o(i, "click");
-                                  break;
-                              case "select":
-                                  o(i, "change");
-                                  break;
-                              case "file":
-                                  o(i, "change"),
-                                      "multiple" ===
-                                          $$("#id_" + t + " input")
-                                              .first()
-                                              .readAttribute("multiple") && o(i, "click", !0);
-                                  break;
-                              case "datetime":
-                                  o(i, "date:changed"),
-                                      $$("#id_" + t + " select").each(function (e) {
-                                          o($(e), "change");
-                                      });
-                                  break;
-                              case "time":
-                                  $$("#id_" + t + " select").each(function (e) {
-                                      o($(e), "change");
-                                  }),
-                                      $$("#id_" + t + " input").each(function (e) {
-                                          null !== $(e).readAttribute("data-mask") && o($(e), "change");
-                                      });
-                                  break;
-                              case "birthdate":
-                                  $$("#id_" + t + " select").each(function (e) {
-                                      o($(e), "change");
-                                  });
-                                  break;
-                              case "address":
-                              case "email":
-                                  o(i, "keyup"), o(i, "change");
-                                  break;
-                              case "number":
-                                  o(i, "keyup"), o(i, "click"), o(i, "change");
-                                  break;
-                              case "text":
-                                  $("input_" + t).readAttribute("data-masked") && u ? o(i, "keyup", !0) : (o(i, "keyup"), o(i, "change"));
-                                  break;
-                              case "widget":
-                                  o($("input_" + t), "change"), JotForm.widgetsWithConditions.push(t);
-                                  break;
-                              default:
-                                  o(i, "keyup"), o(i, "change");
-                          }
-                      })(i),
-                      setTimeout(function () {
-                          JotForm.runConditionForId(n.qid);
-                      }, 50),
-                      (e = i && i.id && i.id in JotForm.defaultValues),
-                      (JotForm.isEditMode() || e) &&
-                          setTimeout(function () {
-                              i.value && s();
-                          }, 1e3))
+                        $(a + "_container").insert(t),
+                        (t = $$(".to-lowercase#" + a).first()),
+                        (e = t.parentNode.parentNode.style.width),
+                        t.setStyle({ width: e }),
+                        t.up('div[id*="cid"]').setStyle({ display: "inline-block" }),
+                        (function (e) {
+                            var t = r(e.id),
+                                e = JotForm.getInputType(t),
+                                i = $("id_" + t);
+                            switch (e) {
+                                case "radio":
+                                case "checkbox":
+                                case "signature":
+                                    o(i, "click");
+                                    break;
+                                case "select":
+                                    o(i, "change");
+                                    break;
+                                case "file":
+                                    o(i, "change"),
+                                        "multiple" ===
+                                        $$("#id_" + t + " input")
+                                            .first()
+                                            .readAttribute("multiple") && o(i, "click", !0);
+                                    break;
+                                case "datetime":
+                                    o(i, "date:changed"),
+                                        $$("#id_" + t + " select").each(function (e) {
+                                            o($(e), "change");
+                                        });
+                                    break;
+                                case "time":
+                                    $$("#id_" + t + " select").each(function (e) {
+                                        o($(e), "change");
+                                    }),
+                                        $$("#id_" + t + " input").each(function (e) {
+                                            null !== $(e).readAttribute("data-mask") && o($(e), "change");
+                                        });
+                                    break;
+                                case "birthdate":
+                                    $$("#id_" + t + " select").each(function (e) {
+                                        o($(e), "change");
+                                    });
+                                    break;
+                                case "address":
+                                case "email":
+                                    o(i, "keyup"), o(i, "change");
+                                    break;
+                                case "number":
+                                    o(i, "keyup"), o(i, "click"), o(i, "change");
+                                    break;
+                                case "text":
+                                    $("input_" + t).readAttribute("data-masked") && u ? o(i, "keyup", !0) : (o(i, "keyup"), o(i, "change"));
+                                    break;
+                                case "widget":
+                                    o($("input_" + t), "change"), JotForm.widgetsWithConditions.push(t);
+                                    break;
+                                default:
+                                    o(i, "keyup"), o(i, "change");
+                            }
+                        })(i),
+                        setTimeout(function () {
+                            JotForm.runConditionForId(n.qid);
+                        }, 50),
+                        (e = i && i.id && i.id in JotForm.defaultValues),
+                        (JotForm.isEditMode() || e) &&
+                        setTimeout(function () {
+                            i.value && s();
+                        }, 1e3))
                     : ((t = new Element("p").setStyle("color", "#F00").update("Invalid source field ID")), $(a + "_container").insert(t));
             };
         }
@@ -119,6 +119,6 @@ window.JFWidgetLowercaseSetup ||
             });
     }),
     void 0 !== window.srcFieldId &&
-        void 0 !== window.lowercaseQid &&
-        void 0 !== window.lowercaseQname &&
-        window.JFWidgetLowercaseSetup({ source: window.srcFieldId, qid: window.lowercaseQid, qname: window.lowercaseQname });
+    void 0 !== window.lowercaseQid &&
+    void 0 !== window.lowercaseQname &&
+    window.JFWidgetLowercaseSetup({ source: window.srcFieldId, qid: window.lowercaseQid, qname: window.lowercaseQname });
