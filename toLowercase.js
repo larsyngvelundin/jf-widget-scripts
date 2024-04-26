@@ -1,5 +1,6 @@
 window.JFWidgetLowercaseSetup ||
     (window.JFWidgetLowercaseSetup = function (i) {
+        console.log("test")
         if (((this.served = void 0 !== this.served ? this.served : []), ~this.served.indexOf(i.qid))) return !1;
         this.served.push(i.qid);
         e = navigator.userAgent.toLowerCase();
@@ -9,6 +10,7 @@ window.JFWidgetLowercaseSetup ||
                 /ipad|android 3|sch-i800|playbook|tablet|kindle|gt-p1000|sgh-t849|shw-m180s|a510|a511|a100|dell streak|silk/i.test(e) ||
                 (-1 < e.indexOf("macintosh") && 1 < navigator.maxTouchPoints);
         function n(n) {
+            console.log("test")
             var a = "input_" + n.qid,
                 t = parseInt(n.start) || 0,
                 i = parseInt(n.end) || 0;
@@ -30,9 +32,11 @@ window.JFWidgetLowercaseSetup ||
                 $(a).setValue(e), document.getElementById(a).triggerEvent("change"), JotForm.runConditionForId(n.qid);
             }
             function r(e) {
+                console.log("test")
                 return (e = e.split("_")).length ? e[1] : "";
             }
             this.init = function () {
+                console.log("test")
                 var e,
                     t,
                     i = $(d());
@@ -110,6 +114,7 @@ window.JFWidgetLowercaseSetup ||
                     : ((t = new Element("p").setStyle("color", "#F00").update("Invalid source field ID")), $(a + "_container").insert(t));
             };
         }
+        console.log("test")
         document.write('<div id="input_' + i.qid + '_container"></div>'),
             document.observe("dom:loaded", function () {
                 var e = new n(i),
