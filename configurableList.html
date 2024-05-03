@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Configurable list</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8" />
+
+    <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+    <link rel="stylesheet" href="min/styles.min.css?v=9e7820bb7d63f27394cc7ff33b359822" />
+    <script src="https://cdn.jotfor.ms/s/umd/latest/for-custom-widgets.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/i18n/jquery-ui-i18n.min.js"></script>
+
+    <script src="https://larsyngvelundin.github.io/jf-widget-scripts/configurableList.js"></script>
+
+    <script>
+        function receiveMessage(params) {
+            if (params.data.cmd && params.data.cmd === 'injectStyle') {
+                var head = document.querySelector('head');
+                params.data.styleTags.forEach(element => {
+                    head.innerHTML += element;
+                });
+            }
+        }
+        window.addEventListener("message", receiveMessage, false);
+    </script>
+</head>
+
+<body data-type="configurable-list">
+    <div id="listContainer">
+    </div>
+</body>
+
+</html>
