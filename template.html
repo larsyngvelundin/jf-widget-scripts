@@ -6,8 +6,13 @@
     <body>
         <div id="main">
             <h3 class="translatable">This is my first widget.</h3>
+            <label for="userInput" id="_label">This is my label</label>
             <span id="labelText"></span>
             <input type="text" id="userInput" class="translatable">
+            <span class="required" style="display: none;">
+                *
+                <span id="requiredElement" class="requiredtxt">OBLIGATORISK</span>
+            </span>
         </div>
         <script type="text/javascript">
             //always subscribe to ready event and implement widget related code
