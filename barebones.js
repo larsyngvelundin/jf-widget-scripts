@@ -3,5 +3,5 @@ window.addEventListener("load", function() {
         console.log("ready");
         console.log("JFCustomWidget.getWidgetSettings:");
         console.log(JFCustomWidget.getWidgetSettings());
-    }
+    });
 });
