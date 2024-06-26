@@ -795,6 +795,7 @@ window.addEventListener("load", function() {
         }
         JFCustomWidget.subscribe("ready", function(e) {
             var t = new n("listContainer", e, JFCustomWidget.getWidgetSettings());
+            console.log("JFCustomWidget.getWidgetSettings",JFCustomWidget.getWidgetSettings());
             (!t.isNewDefaultTheme || t.isCardForm || -1 < window.location.href.indexOf("offline_forms=true")) && (t.init(), t.checkHeightChange()), JFCustomWidget.subscribe("loadNewDefaultThemeCss", function() {
                 t.init(), t.setCssLoaded(!0), t.resizeIframe(), setTimeout(function() {
                     t.alignLabelsByRow()
