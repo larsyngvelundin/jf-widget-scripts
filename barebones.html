@@ -2,33 +2,24 @@
 <html>
 
 <head>
-    <title>Configurable list</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta charset="utf-8" />
-    
-    <script src="https://cdn.jotfor.ms/s/umd/latest/for-custom-widgets.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/i18n/jquery-ui-i18n.min.js"></script>
-
-    <script src="https://larsyngvelundin.github.io/jf-widget-scripts/barebones.js"></script>
-
-    <script>
-        function receiveMessage(params) {
-            if (params.data.cmd && params.data.cmd === 'injectStyle') {
-                var head = document.querySelector('head');
-                params.data.styleTags.forEach(element => {
-                    head.innerHTML += element;
-                });
-            }
-        }
-        window.addEventListener("message", receiveMessage, false);
-    </script>
+    <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
 </head>
 
-<body data-type="configurable-list">
-    <div id="listContainer">
+<body>
+    <div id="main">
+        <h3>Widget test</h3>
+        <span id="labelText"></span>
+        <input type="text" id="userInput">
     </div>
+    <script type="text/javascript">
+        window.addEventListener("load", function () {
+            JFCustomWidget.subscribe("ready", function (e) {
+                console.log("ready");
+                console.log("JFCustomWidget.getWidgetSettings:");
+                console.log(JFCustomWidget.getWidgetSettings());
+            });
+        });
+    </script>
 </body>
 
 </html>
