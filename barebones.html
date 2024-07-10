@@ -11,13 +11,12 @@
         <span id="labelText"></span>
         <input type="text" id="userInput">
     </div>
+
     <script type="text/javascript">
-        window.addEventListener("load", function () {
-            JFCustomWidget.subscribe("ready", function (e) {
-                console.log("ready");
-                console.log("JFCustomWidget.getWidgetSettings:");
-                console.log(JFCustomWidget.getWidgetSettings());
-            });
+        JFCustomWidget.subscribe("ready", function (e) {
+            console.log("ready");
+            console.log("JFCustomWidget.getWidgetSettings:");
+            console.log(JFCustomWidget.getWidgetSettings());
         });
     </script>
 </body>
